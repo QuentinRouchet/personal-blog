@@ -9,7 +9,7 @@
 
     <section class="text-gray-600 body-font px-12">
         @foreach ($posts as $post)
-            <div class="article my-10 h-full rounded-xl shadow-cla-blue bg-gradient-to-r from-indigo-50 to-blue-50 overflow-hidden shadow-md relative overflow-hidden">
+            <div class="article bg-white my-10 h-full rounded-xl shadow-cla-blue overflow-hidden shadow-md relative overflow-hidden">
                 <div class="p-6">
                     <span class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">
                         {{ $post->created_at->format('d M y') }}
