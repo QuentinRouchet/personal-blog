@@ -28,7 +28,7 @@ class PostController extends Controller
     public function create()
     {
         $categories = Category::all();
-        
+
         return view('post.create', compact('categories'));
     }
 
@@ -40,7 +40,15 @@ class PostController extends Controller
      */
     public function store(StorePostRequest $request)
     {
-        //
+        $imageName = $request->image->store('posts');
+
+        Post::create([
+            'title' => $request->title,
+            'content' => $request->content,
+            'image' => $imageName
+        ]);
+
+        return redirect()->route('dashboard')->with('success', 'Post succesfully create');
     }
 
     /**

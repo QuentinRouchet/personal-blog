@@ -7,6 +7,12 @@
         </h2>
     </x-slot>
 
+    <div class="my-5">
+        @foreach ($errors->all() as $error)
+            <span class="block text-red-500">{{ $error }}</span>
+        @endforeach
+    </div>
+
     <div>
         <form action="{{ route('posts.store') }}" method="post" enctype="multipart/form-data">
 
